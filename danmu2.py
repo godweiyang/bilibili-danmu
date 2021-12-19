@@ -38,8 +38,8 @@ def get_danmu(info, start, end):
     all_dms = []
     for i, cid in enumerate(info["cid"]):
         dms = []
-        for i in trange(len(date_list)):
-            url = f"https://api.bilibili.com/x/v2/dm/web/history/seg.so?type=1&oid={cid}&date={date_list[i]}"
+        for j in trange(len(date_list)):
+            url = f"https://api.bilibili.com/x/v2/dm/web/history/seg.so?type=1&oid={cid}&date={date_list[j]}"
             response = requests.get(url, headers=headers)
             response.encoding = "utf-8"
             data = re.findall(r"[:](.*?)[@]", response.text)
